@@ -40,6 +40,11 @@ Suba os containers
     docker compose up
 ```
 
+Rode as migrações e seeders
+```bash
+    docker exec -it app php arttisan migrate --seed
+```
+
 ## Como Usar
 
 Após subir os containers, acesse a url http://127.0.0.1:8090/api/health em seu navegador. Se a instalação foi bem sucedida, você terá o seguinte retorno:
