@@ -10,7 +10,7 @@ class RentalMovie extends Model
     use HasFactory;
 
     protected $fillable = [
-        'uuid',
+        'id',
         'movieId',
         'customerId',
         'reserveId',

@@ -16,7 +16,7 @@ class MovieSeeder extends Seeder
     public function run(): void
     {
         Movie::firstOrCreate([
-            'uuid' => Uuid::uuid4(),
+            'id' => Uuid::uuid4(),
             'name' => fake()->domainName(),
             'synopsis' => fake()->text(),
             'rating' => '10',

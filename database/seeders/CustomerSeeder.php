@@ -15,7 +15,7 @@ class CustomerSeeder extends Seeder
     public function run(): void
     {
         Customer::firstOrCreate([
-            'uuid' => Uuid::uuid4(),
+            'id' => Uuid::uuid4(),
             'name' => fake()->name(),
             'email' => fake()->email(),
             'phone' => fake()->phoneNumber(),

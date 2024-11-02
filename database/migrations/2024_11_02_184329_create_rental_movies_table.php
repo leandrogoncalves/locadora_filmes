@@ -12,11 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('rental_movies', function (Blueprint $table) {
-            $table->uuid()->primary();
+            $table->char('id', 36)->primary();
             $table->char('movieId', 36);
-            $table->foreign('movieId')->references('uuid')->on('movies');
+            $table->foreign('movieId')->references('id')->on('movies');
             $table->char('customerId', 36);
-            $table->foreign('customerId')->references('uuid')->on('customers');
+            $table->foreign('customerId')->references('id')->on('customers');
             $table->string('reserveId')->nullable();
             $table->enum('status', ['RESERVED','LEASED','RETURNED'])->nullable();
             $table->timestamps();
