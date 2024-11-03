@@ -1,0 +1,243 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Locadora",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/v1/movies": {
+            "get": {
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Retorna a lista de filmes cadastrados",
+                "operationId": "c2dc9f286ede3b912d3e2649636f3e46",
+                "responses": {
+                    "200": {
+                        "description": "Filmes",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "properties": {
+                                            "id": {
+                                                "type": "string",
+                                                "example": "1aa219ef-c8a0-4d86-8bd3-244cbd07e632"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "example": "Filme teste"
+                                            },
+                                            "synopsis": {
+                                                "type": "string",
+                                                "example": "Teste"
+                                            },
+                                            "rating": {
+                                                "type": "number",
+                                                "example": "10"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Erro de validação"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            }
+        },
+        "/api/v1/rental": {
+            "post": {
+                "tags": [
+                    "Rental movie"
+                ],
+                "summary": "Retorna o Id da reserva do filme",
+                "operationId": "9555bc7f61593295b881416bffdb9a35",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "movieId": {
+                                        "description": "ID do filme",
+                                        "type": "string",
+                                        "example": "1aa219ef-c8a0-4d86-8bd3-244cbd07e632"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Filmes",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "reserveId": {
+                                            "type": "string",
+                                            "example": "1aa219ef-c8a0-4d86-8bd3-244cbd07e632"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Erro de validação"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            }
+        },
+        "/api/v1/rental/confirmation": {
+            "post": {
+                "tags": [
+                    "Rental movie"
+                ],
+                "summary": "Retorna o Id da confirmação de aluguel do filme",
+                "operationId": "899669e2df886460cb97495bf20b8b59",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "reserveId": {
+                                        "description": "ID da reserva",
+                                        "type": "string",
+                                        "example": "1aa219ef-c8a0-4d86-8bd3-244cbd07e632"
+                                    },
+                                    "customer": {
+                                        "description": "Dados do cliente",
+                                        "properties": {
+                                            "name": {
+                                                "description": "Nome do cliente",
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "description": "E-mail do cliente",
+                                                "type": "string"
+                                            },
+                                            "phone": {
+                                                "description": "Telefone do cliente",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Filmes",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "scheduleId": {
+                                            "type": "string",
+                                            "example": "1aa219ef-c8a0-4d86-8bd3-244cbd07e632"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "LEASED"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Erro de validação"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            }
+        },
+        "/api/v1/rental/return": {
+            "post": {
+                "tags": [
+                    "Rental movie"
+                ],
+                "summary": "Faz a devolução do filme",
+                "operationId": "002d302ca28610407f4f0bc1345aa5c9",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "scheduleId": {
+                                        "description": "ID da confirmação de aluguel",
+                                        "type": "string",
+                                        "example": "1aa219ef-c8a0-4d86-8bd3-244cbd07e632"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Filmes",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "scheduleId": {
+                                            "type": "string",
+                                            "example": "1aa219ef-c8a0-4d86-8bd3-244cbd07e632"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "RETURNED"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Erro de validação"
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Movies",
+            "description": "Movies"
+        },
+        {
+            "name": "Rental movie",
+            "description": "Rental movie"
+        }
+    ]
+}

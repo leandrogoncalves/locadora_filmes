@@ -56,8 +56,7 @@ Após subir os containers, acesse a url http://127.0.0.1:8090 seu navegador. Se 
 
 <img src="/storage/app/img/print.png">
 
-
-Você pode acessar documentação dos endpoints do projeto [clicando aqui](https://documenter.getpostman.com/view/19570429/2sA2r824Sc#8591c6c4-b293-42b4-a80b-32674f03355d)
+Você pode acessar documentação dos endpoints do projeto acesse o link http://127.0.0.1:8090/api/docs
 
 ## Testes
 
@@ -72,7 +71,7 @@ Suba os containers:
 
 Rode os testes:
 ```bash
-    docker exec -it payment-app php artisan test
+    docker exec -it app sh -c "php artisan test"
 ```
 
 ## Funcionamento

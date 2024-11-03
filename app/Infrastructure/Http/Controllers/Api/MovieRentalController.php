@@ -7,6 +7,7 @@ namespace App\Infrastructure\Http\Controllers\Api;
 use App\Application\Services\MovieRentalService;
 use App\Infrastructure\Exceptions\BookingErrorException;
 use App\Infrastructure\Exceptions\NotFoundException;
+use App\Infrastructure\Http\Controllers\Api\Contracts\MovieRentalControllerInterface;
 use App\Infrastructure\Http\Controllers\Controller;
 use App\Infrastructure\Http\Requests\BookingConfirmationRequest;
 use App\Infrastructure\Http\Requests\BookingMovieRequest;
@@ -16,7 +17,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Log;
 use Throwable;
 
-class MovieRentalController extends Controller
+class MovieRentalController extends Controller implements MovieRentalControllerInterface
 {
     /**
      * @param MovieRentalService $service
