@@ -42,18 +42,20 @@ Suba os containers
 
 Rode as migrações e seeders
 ```bash
-    docker exec -it app php arttisan migrate --seed
+    docker exec -it app sh -c "php artisan migrate --seed"
+```
+
+Execute o build do frontend
+```bash
+    docker exec -it app sh -c "npm i && npm run build"
 ```
 
 ## Como Usar
 
-Após subir os containers, acesse a url http://127.0.0.1:8090/api/health em seu navegador. Se a instalação foi bem sucedida, você terá o seguinte retorno:
+Após subir os containers, acesse a url http://127.0.0.1:8090 seu navegador. Se a instalação foi bem sucedida, você terá o seguinte retorno:
 
-```json
-    {
-        "status": "Operational"
-    }
-```
+<img src="/storage/app/img/print.png">
+
 
 Você pode acessar documentação dos endpoints do projeto [clicando aqui](https://documenter.getpostman.com/view/19570429/2sA2r824Sc#8591c6c4-b293-42b4-a80b-32674f03355d)
 
