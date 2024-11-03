@@ -35,6 +35,15 @@
         }
     },
     "scripts": {
+        "generate-docs": "php artisan l5-swagger:generate",
+        "test": "./vendor/bin/phpunit  -d memory_limit=-1",
+        "test:filter": "./vendor/bin/phpunit --filter ",
+        "test:group": "./vendor/bin/phpunit --group ",
+        "test:coverage-html": "./vendor/bin/phpunit -d memory_limit=-1 --coverage-html code_coverage_html",
+        "test:coverage-text": "./vendor/bin/phpunit -d memory_limit=-1 --coverage-text",
+        "code-qa": "./vendor/bin/grumphp run",
+        "code-qa-task": "./vendor/bin/grumphp run --tasks",
+        "test:unit": "./vendor/bin/phpunit --printer 'Sempro\\PHPUnitPrettyPrinter\\PrettyPrinter' --exclude integration-external",
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

@@ -22,7 +22,7 @@ use App\Infrastructure\Http\Controllers\Api\MovieRentalController;
 
 Route::get('health', function (){
     return response()->json(['status' => 'Operational']);
-});
+})->name('api.health');;
 
 Route::group(['prefix' => '/v1'], function () {
     Route::get('/movies', [MovieController::class, 'read'])

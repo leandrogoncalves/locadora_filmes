@@ -12,7 +12,7 @@ class BaseModel extends Model
 
     protected $keyType = 'string';
 
-    public function getIdAttribute(): string|LazyUuidFromString
+    public function getIdAttribute(): null|string|LazyUuidFromString
     {
         return $this->attributes['id'];
     }
