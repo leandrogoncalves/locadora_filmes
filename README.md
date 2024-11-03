@@ -75,7 +75,94 @@ Rode os testes:
 
 ## Funcionamento
 
-Sugestão de teste:
+Endpoints:
 
-1. Cadastre dois usuários comuns.
+### Listar filmes
+
+Endpoint responsável por listar filmes disponíveis para locação.
+
+```bash
+GET /api/v1/filmes
+[
+    {
+        id: guid,
+        name: string,
+        synopsis: string,
+        rating: string
+    }
+]
+```
+
+### Reservar filme
+
+Este endpoint é responsável por efetuar a reserva do filme, deve ter um tempo prédeterminado e configurável (3 horas), ao executar a reserva o sistema deverá retornar
+um id identificando a reserva.
+
+// payload
+```bash
+POST /api/v1/rental
+{
+    movieId: guid
+}
+```
+
+// response body
+```bash
+{
+    reserveId: guid
+}
+```
+
+### Confirmar locação
+
+Este endpoint é responsável por executar a confirmação da locação e receber os
+dados do cliente.
+
+// payload
+
+```bash
+POST /api/v1/rental/confirmation
+
+{
+    reserveId: guid,
+        customer: {
+            name: string,
+            email: string,
+            phone: string
+        }
+}
+```
+
+// response body
+
+```bash
+{
+    scheduleId: guid,
+    status: 'LEASED'
+}
+```
+
+### Devolver filme
+
+Este endpoint é responsável por executar a devolução do filme, deve receber o id da
+locação.
+
+
+// payload
+
+```bash
+POST /api/v1/rental/return
+{
+    scheduleId: guid
+}
+```
+
+// response body
+
+```bash
+{
+    scheduleId: guid,
+    status: 'RETURNED'
+}
+```
 

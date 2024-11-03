@@ -4,10 +4,10 @@ namespace App\Providers;
 
 use App\Domain\Repository\CustomerRepositoryInterface;
 use App\Domain\Repository\MovieRepositoryInterface;
-use App\Domain\Repository\RentalMovieRepositoryInterface;
+use App\Domain\Repository\MovieRentalRepositoryInterface;
 use App\Infrastructure\Repository\CustomerRepository;
 use App\Infrastructure\Repository\MovieRepository;
-use App\Infrastructure\Repository\RentalMovieRepositoryRepository;
+use App\Infrastructure\Repository\MovieRentalRepository;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,8 +28,8 @@ class AppServiceProvider extends ServiceProvider
 
         );
         $this->app->bind(
-            RentalMovieRepositoryInterface::class,
-            RentalMovieRepositoryRepository::class
+            MovieRentalRepositoryInterface::class,
+            MovieRentalRepository::class
         );
     }
 

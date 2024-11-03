@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Infrastructure\Http\Requests;
 
-use App\Infrastructure\Exceptions\ValidationApiException;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use App\Infrastructure\Exceptions\ValidationApiException;
 
-class MovieRequest extends FormRequest
+class BookingMovieRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +26,21 @@ class MovieRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'sometimes|string'
+            'movieId' => 'required|string'
         ];
     }
+
+    /**
+     * @return string[]
+     */
+    public function messages(): array
+    {
+        return [
+            'movieId:required' => 'O campo "movieId" é obrigatório',
+            'movieId:string' => 'O campo "movieId" deve ser um texto'
+        ];
+    }
+
 
     /**
      * @param Validator $validator

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Infrastructure\Http\Controllers\Api\MovieController;
+use App\Infrastructure\Http\Controllers\Api\MovieRentalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,22 @@ use App\Infrastructure\Http\Controllers\Api\MovieController;
 //    return $request->user();
 //});
 
-Route::get('/movies', [MovieController::class, 'read'])->name('api.movies.read');
+Route::get('health', function (){
+    return response()->json(['status' => 'Operational']);
+});
+
+Route::group(['prefix' => '/v1'], function () {
+    Route::get('/movies', [MovieController::class, 'read'])
+        ->name('api.movies.read');
+
+    Route::group(['prefix' => '/rental'], function () {
+        Route::post('/', [MovieRentalController::class, 'booking'])
+            ->name('api.rental.booking');
+        Route::post('/confirmation', [MovieRentalController::class, 'confirmation'])
+            ->name('api.rental.confirmation');
+        Route::post('/return', [MovieRentalController::class, 'return'])
+            ->name('api.rental.return');
+    });
+});
+
+
