@@ -57,6 +57,11 @@ Suba os containers
     docker compose up
 ```
 
+Gere a chave de encriptação da aplicação
+```bash
+    docker exec -it app sh -c "php artisan key:generate"
+```
+
 Rode as migrações e seeders
 ```bash
     docker exec -it app sh -c "php artisan migrate --seed"

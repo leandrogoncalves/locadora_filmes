@@ -11,6 +11,7 @@ fi
 
 php artisan cache:clear
 php artisan config:cache
+php artisan key:generate
 
 sleep 5
 
