@@ -13,7 +13,7 @@ interface MovieRentalControllerInterface
      * @OA\Post(
      *     path="/api/v1/rental",
      *     summary="Retorna o Id da reserva do filme",
-     *     tags={"Rental movie"},
+     *     tags={"Movie rental"},
      *     @OA\RequestBody(
      *        required=true,
      *        @OA\MediaType(
@@ -56,7 +56,7 @@ interface MovieRentalControllerInterface
      * @OA\Post(
      *     path="/api/v1/rental/confirmation",
      *     summary="Retorna o Id da confirmação de aluguel do filme",
-     *     tags={"Rental movie"},
+     *     tags={"Movie rental"},
      *     @OA\RequestBody(
      *        required=true,
      *        @OA\MediaType(
@@ -124,7 +124,7 @@ interface MovieRentalControllerInterface
      * @OA\Post(
      *     path="/api/v1/rental/return",
      *     summary="Faz a devolução do filme",
-     *     tags={"Rental movie"},
+     *     tags={"Movie rental"},
      *     @OA\RequestBody(
      *        required=true,
      *        @OA\MediaType(
