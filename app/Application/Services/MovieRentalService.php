@@ -23,7 +23,8 @@ class MovieRentalService
         private MovieRentalRepositoryInterface $repository,
         private MovieService $movieService,
         private CustomerService $customerService,
-    ) {}
+    ) {
+    }
 
     public function booking(array $data): array
     {

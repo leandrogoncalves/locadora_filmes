@@ -21,7 +21,8 @@ class MovieRentalController extends Controller implements MovieRentalControllerI
 {
     public function __construct(
         protected MovieRentalService $service
-    ) {}
+    ) {
+    }
 
     public function booking(BookingMovieRequest $request): JsonResponse
     {

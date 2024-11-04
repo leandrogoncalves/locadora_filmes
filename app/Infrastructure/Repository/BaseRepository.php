@@ -12,7 +12,8 @@ abstract class BaseRepository implements BaseRespositoryInterface
 {
     public function __construct(
         protected DatabaseManager $databaseManager
-    ) {}
+    ) {
+    }
 
     protected Builder $query;
 

@@ -4,4 +4,6 @@ declare(strict_types=1);
 
 namespace App\Domain\Repository;
 
-interface MovieRepositoryInterface extends BaseRespositoryInterface {}
+interface MovieRepositoryInterface extends BaseRespositoryInterface
+{
+}

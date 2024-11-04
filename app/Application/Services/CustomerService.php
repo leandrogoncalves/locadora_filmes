@@ -12,7 +12,8 @@ class CustomerService
 {
     public function __construct(
         private CustomerRepositoryInterface $repository
-    ) {}
+    ) {
+    }
 
     public function fisrtOrCreate(array $customerData): Customer
     {

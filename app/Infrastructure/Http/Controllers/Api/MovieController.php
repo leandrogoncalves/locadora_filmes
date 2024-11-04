@@ -17,7 +17,8 @@ class MovieController extends Controller implements MovieControllerInterface
 {
     public function __construct(
         private MovieService $service
-    ) {}
+    ) {
+    }
 
     public function read(MovieRequest $request): JsonResponse
     {

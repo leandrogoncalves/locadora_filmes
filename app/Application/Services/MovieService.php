@@ -13,7 +13,8 @@ class MovieService
 {
     public function __construct(
         private MovieRepositoryInterface $repository
-    ) {}
+    ) {
+    }
 
     public function readAll(array $filters = []): Arrayable
     {
