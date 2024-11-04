@@ -106,7 +106,7 @@ Endpoints:
 Endpoint responsável por listar filmes disponíveis para locação.
 
 ```bash
-GET /api/v1/filmes
+GET /api/v1/movies
 [
     {
         id: guid,
