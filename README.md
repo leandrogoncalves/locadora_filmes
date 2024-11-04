@@ -29,7 +29,7 @@ A aplicação foi desenvolvida utilizando as Tecnologias abaixo, segue links par
 Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
 - Git
-- Docker [docker](https://docs.docker.com/get-docker/)
+- [Docker](https://docs.docker.com/get-docker/)
 - Docker Compose
 
 
