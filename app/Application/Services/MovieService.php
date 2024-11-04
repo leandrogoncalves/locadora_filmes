@@ -11,21 +11,14 @@ use Illuminate\Contracts\Support\Arrayable;
 
 class MovieService
 {
-    /**
-     * @param MovieRepositoryInterface $repository
-     */
     public function __construct(
         private MovieRepositoryInterface $repository
     ) {}
 
-    /**
-     * @param array $filters
-     * @return Arrayable
-     */
     public function readAll(array $filters = []): Arrayable
     {
         $filters = array_map(
-            fn($filter, $name) => ['field' => $name, 'value' => $filter],
+            fn ($filter, $name) => ['field' => $name, 'value' => $filter],
             $filters,
             array_keys($filters)
         );
@@ -40,7 +33,7 @@ class MovieService
             'value' => $id,
         ]])->first();
 
-        if (!$movie instanceof Movie) {
+        if (! $movie instanceof Movie) {
             throw new NotFoundException('Filme não encontrado');
         }
 

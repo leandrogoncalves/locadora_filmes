@@ -14,12 +14,16 @@ interface MovieRentalControllerInterface
      *     path="/api/v1/rental",
      *     summary="Retorna o Id da reserva do filme",
      *     tags={"Movie rental"},
+     *
      *     @OA\RequestBody(
      *        required=true,
+     *
      *        @OA\MediaType(
      *            mediaType="application/json",
+     *
      *            @OA\Schema(
      *                type="object",
+     *
      *                @OA\Property(
      *                    property="movieId",
      *                    type="string",
@@ -29,14 +33,18 @@ interface MovieRentalControllerInterface
      *            ),
      *        )
      *    ),
+     *
      *     @OA\Response(
      *         response="200",
      *         description="Filmes",
      *         content={
+     *
      *             @OA\MediaType(
      *                 mediaType="application/json",
+     *
      *                 @OA\Schema(
      *                    type="object",
+     *
      *                          @OA\Property(
      *                            property="reserveId",
      *                            type="string",
@@ -46,6 +54,7 @@ interface MovieRentalControllerInterface
      *             )
      *         }
      *     ),
+     *
      *     @OA\Response(response="422", description="Erro de validação"),
      *     @OA\Response(response="500", description="Erro interno do servidor")
      * ),
@@ -57,12 +66,16 @@ interface MovieRentalControllerInterface
      *     path="/api/v1/rental/confirmation",
      *     summary="Retorna o Id da confirmação de aluguel do filme",
      *     tags={"Movie rental"},
+     *
      *     @OA\RequestBody(
      *        required=true,
+     *
      *        @OA\MediaType(
      *            mediaType="application/json",
+     *
      *            @OA\Schema(
      *                type="object",
+     *
      *                @OA\Property(
      *                    property="reserveId",
      *                    type="string",
@@ -92,14 +105,18 @@ interface MovieRentalControllerInterface
      *            ),
      *        )
      *    ),
+     *
      *     @OA\Response(
      *         response="200",
      *         description="Filmes",
      *         content={
+     *
      *             @OA\MediaType(
      *                 mediaType="application/json",
+     *
      *                 @OA\Schema(
      *                    type="object",
+     *
      *                          @OA\Property(
      *                            property="scheduleId",
      *                            type="string",
@@ -114,6 +131,7 @@ interface MovieRentalControllerInterface
      *             )
      *         }
      *     ),
+     *
      *     @OA\Response(response="422", description="Erro de validação"),
      *     @OA\Response(response="500", description="Erro interno do servidor")
      * ),
@@ -125,12 +143,16 @@ interface MovieRentalControllerInterface
      *     path="/api/v1/rental/return",
      *     summary="Faz a devolução do filme",
      *     tags={"Movie rental"},
+     *
      *     @OA\RequestBody(
      *        required=true,
+     *
      *        @OA\MediaType(
      *            mediaType="application/json",
+     *
      *            @OA\Schema(
      *                type="object",
+     *
      *                @OA\Property(
      *                    property="scheduleId",
      *                    type="string",
@@ -140,14 +162,18 @@ interface MovieRentalControllerInterface
      *            ),
      *        )
      *    ),
+     *
      *     @OA\Response(
      *         response="200",
      *         description="Filmes",
      *         content={
+     *
      *             @OA\MediaType(
      *                 mediaType="application/json",
+     *
      *                 @OA\Schema(
      *                    type="object",
+     *
      *                          @OA\Property(
      *                            property="scheduleId",
      *                            type="string",
@@ -162,11 +188,10 @@ interface MovieRentalControllerInterface
      *             )
      *         }
      *     ),
+     *
      *     @OA\Response(response="422", description="Erro de validação"),
      *     @OA\Response(response="500", description="Erro interno do servidor")
      * ),
      */
     public function return(BookingReturnRequest $request): JsonResponse;
-
-
 }

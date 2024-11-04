@@ -13,6 +13,7 @@ class BookingErrorException extends \Exception
     public function render(): Response
     {
         Log::error($this->getMessage());
+
         return response([
             'error' => $this->getMessage(),
         ], StatusCodeInterface::STATUS_BAD_REQUEST);

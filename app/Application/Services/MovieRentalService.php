@@ -9,19 +9,20 @@ use App\Domain\Models\MovieRental;
 use App\Domain\Repository\MovieRentalRepositoryInterface;
 use App\Infrastructure\Exceptions\BookingErrorException;
 use Carbon\Carbon;
+use Exception;
 use Illuminate\Support\Facades\Log;
 use Ramsey\Uuid\Uuid;
-use Exception;
 
 class MovieRentalService
 {
     protected Movie $movie;
+
     protected MovieRental $movieRental;
 
     public function __construct(
         private MovieRentalRepositoryInterface $repository,
-        private MovieService                   $movieService,
-        private CustomerService                $customerService,
+        private MovieService $movieService,
+        private CustomerService $customerService,
     ) {}
 
     public function booking(array $data): array
@@ -33,6 +34,7 @@ class MovieRentalService
             if ($this->isMovieAvailable()) {
                 $booking = $this->makeReservation();
                 $this->repository->commit();
+
                 return [
                     'reserveId' => $booking->reserveId,
                 ];
@@ -41,6 +43,7 @@ class MovieRentalService
             if ($this->isReservationTimeout()) {
                 $booking = $this->updateReservation();
                 $this->repository->commit();
+
                 return [
                     'reserveId' => $booking->reserveId,
                 ];
@@ -63,16 +66,16 @@ class MovieRentalService
             [
                 'field' => 'reserveId',
                 'value' => $data['reserveId'],
-            ]
+            ],
         ])->first();
 
-        if (!$movieRental instanceof MovieRental) {
+        if (! $movieRental instanceof MovieRental) {
             throw new BookingErrorException('Reserva não encontrada');
         }
 
         if ($movieRental->status === 'LEASED') {
             return [
-                'message' => 'Este filme já está alugado'
+                'message' => 'Este filme já está alugado',
             ];
         }
 
@@ -96,10 +99,10 @@ class MovieRentalService
             [
                 'field' => 'scheduleId',
                 'value' => $data['scheduleId'],
-            ]
+            ],
         ])->first();
 
-        if (!$movieRental instanceof MovieRental) {
+        if (! $movieRental instanceof MovieRental) {
             throw new BookingErrorException('Reserva não encontrada');
         }
 
@@ -140,7 +143,7 @@ class MovieRentalService
             'reserve_date' => Carbon::now()->setTimezone(config('app.timezone')),
         ]);
 
-        if (!$this->movieRental instanceOf MovieRental) {
+        if (! $this->movieRental instanceof MovieRental) {
             throw new BookingErrorException('Não foi possível reservar o filme, tente novamente mais tarde');
         }
 
@@ -154,7 +157,7 @@ class MovieRentalService
             $movieRental = $this->movieRental;
         }
 
-        if (!$movieRental instanceof MovieRental) {
+        if (! $movieRental instanceof MovieRental) {
             return false;
         }
 
@@ -172,7 +175,7 @@ class MovieRentalService
             ]
         );
 
-        if (!$this->movieRental instanceOf MovieRental) {
+        if (! $this->movieRental instanceof MovieRental) {
             throw new BookingErrorException('Não foi possível reservar o filme, tente novamente mais tarde');
         }
 

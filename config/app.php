@@ -144,12 +144,10 @@ return [
         // 'store' => 'redis',
     ],
 
-
     /**
      * Tempo máximo de reserva do filme
      */
     'reservation_hours' => env('RESERVATION_HOURS', 3),
-
 
     /*
     |--------------------------------------------------------------------------

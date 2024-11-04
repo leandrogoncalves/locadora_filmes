@@ -24,13 +24,13 @@ class MovieRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'sometimes|string'
+            'name' => 'sometimes|string',
         ];
     }
 
     /**
-     * @param Validator $validator
      * @return mixed
+     *
      * @throws ValidationApiException
      */
     protected function failedValidation(Validator $validator)

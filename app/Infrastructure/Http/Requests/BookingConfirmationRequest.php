@@ -34,8 +34,8 @@ class BookingConfirmationRequest extends FormRequest
     }
 
     /**
-     * @param Validator $validator
      * @return mixed
+     *
      * @throws ValidationApiException
      */
     protected function failedValidation(Validator $validator)

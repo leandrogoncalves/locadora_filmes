@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use App\Infrastructure\Http\Controllers\Api\MovieController;
 use App\Infrastructure\Http\Controllers\Api\MovieRentalController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +20,9 @@ use App\Infrastructure\Http\Controllers\Api\MovieRentalController;
 //    return $request->user();
 //});
 
-Route::get('health', function (){
+Route::get('health', function () {
     return response()->json(['status' => 'Operational']);
-})->name('api.health');;
+})->name('api.health');
 
 Route::group(['prefix' => '/v1'], function () {
     Route::get('/movies', [MovieController::class, 'read'])
@@ -37,5 +37,3 @@ Route::group(['prefix' => '/v1'], function () {
             ->name('api.rental.return');
     });
 });
-
-

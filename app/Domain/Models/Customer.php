@@ -16,5 +16,4 @@ class Customer extends BaseModel
         'created_at',
         'updated_at',
     ];
-
 }

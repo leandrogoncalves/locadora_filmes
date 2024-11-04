@@ -24,14 +24,15 @@ class MovieRentalRepository extends BaseRepository implements MovieRentalReposit
             [
                 'field' => 'movieId',
                 'value' => $movieId,
-            ]
+            ],
         ])->first();
 
-        if (!$rentalMovie instanceof MovieRental) {
+        if (! $rentalMovie instanceof MovieRental) {
             throw new NotFoundException('Reserva não encontrada com o filme selecionado');
         }
 
         $rentalMovie->fill($rentalMovieData)->save();
+
         return $rentalMovie;
     }
 }

@@ -14,9 +14,6 @@ abstract class BaseRepository implements BaseRespositoryInterface
         protected DatabaseManager $databaseManager
     ) {}
 
-    /**
-     * @var Builder
-     */
     protected Builder $query;
 
     public function getQuery(): Builder
@@ -25,7 +22,6 @@ abstract class BaseRepository implements BaseRespositoryInterface
     }
 
     /**
-     * @param array $filters
      * @return $this
      */
     public function where(array $filters): self
@@ -37,21 +33,16 @@ abstract class BaseRepository implements BaseRespositoryInterface
                 data_get($filter, 'value', '')
             );
         }
+
         return $this;
     }
 
-    /**
-     * @return Arrayable
-     */
     public function read(): Arrayable
     {
         return $this->query->get();
     }
 
-    /**
-     * @return Model|null
-     */
-    public function first(): Model|null
+    public function first(): ?Model
     {
         return $this->query->first();
     }
@@ -60,6 +51,7 @@ abstract class BaseRepository implements BaseRespositoryInterface
     {
         $model = $this->query->newModelInstance()->fill($data);
         $model->save();
+
         return $model;
     }
 

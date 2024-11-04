@@ -12,15 +12,20 @@ interface MovieControllerInterface
      *     path="/api/v1/movies",
      *     summary="Retorna a lista de filmes cadastrados",
      *     tags={"Movies"},
+     *
      *     @OA\Response(
      *         response="200",
      *         description="Filmes",
      *         content={
+     *
      *             @OA\MediaType(
      *                 mediaType="application/json",
+     *
      *                 @OA\Schema(
      *                    type="array",
+     *
      *                     @OA\Items(
+     *
      *                          @OA\Property(
      *                            property="id",
      *                            type="string",
@@ -46,6 +51,7 @@ interface MovieControllerInterface
      *             )
      *         }
      *     ),
+     *
      *     @OA\Response(response="422", description="Erro de validação"),
      *     @OA\Response(response="500", description="Erro interno do servidor")
      * )

@@ -17,5 +17,4 @@ class CustomerRepository extends BaseRepository implements CustomerRepositoryInt
         parent::__construct($databaseManager);
         $this->query = $model->newModelQuery();
     }
-
 }

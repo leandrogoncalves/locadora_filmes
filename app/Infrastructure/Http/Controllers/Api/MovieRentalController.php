@@ -19,43 +19,33 @@ use Throwable;
 
 class MovieRentalController extends Controller implements MovieRentalControllerInterface
 {
-    /**
-     * @param MovieRentalService $service
-     */
     public function __construct(
         protected MovieRentalService $service
     ) {}
 
-    /**
-     * @param BookingMovieRequest $request
-     * @return JsonResponse
-     */
     public function booking(BookingMovieRequest $request): JsonResponse
     {
         try {
             return response()->json(
                 $this->service->booking($request->validated())
             );
-        }catch (NotFoundException $e) {
+        } catch (NotFoundException $e) {
             return response()->json([
                 'error' => $e->getMessage(),
             ], StatusCodeInterface::STATUS_NOT_FOUND);
         } catch (Throwable $e) {
-            Log::error($e->getMessage(),[
+            Log::error($e->getMessage(), [
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
                 'trace' => $e->getTraceAsString(),
             ]);
+
             return response()->json([
-                'error' => 'Erro interno do servidor'
+                'error' => 'Erro interno do servidor',
             ], StatusCodeInterface::STATUS_INTERNAL_SERVER_ERROR);
         }
     }
 
-    /**
-     * @param BookingConfirmationRequest $request
-     * @return JsonResponse
-     */
     public function confirmation(BookingConfirmationRequest $request): JsonResponse
     {
         try {
@@ -67,21 +57,18 @@ class MovieRentalController extends Controller implements MovieRentalControllerI
                 'message' => $e->getMessage(),
             ], StatusCodeInterface::STATUS_UNPROCESSABLE_ENTITY);
         } catch (Throwable $e) {
-            Log::error($e->getMessage(),[
+            Log::error($e->getMessage(), [
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
                 'trace' => $e->getTraceAsString(),
             ]);
+
             return response()->json([
-                'error' => 'Erro interno do servidor'
+                'error' => 'Erro interno do servidor',
             ], StatusCodeInterface::STATUS_INTERNAL_SERVER_ERROR);
         }
     }
 
-    /**
-     * @param BookingReturnRequest $request
-     * @return JsonResponse
-     */
     public function return(BookingReturnRequest $request): JsonResponse
     {
         try {
@@ -93,13 +80,14 @@ class MovieRentalController extends Controller implements MovieRentalControllerI
                 'message' => $e->getMessage(),
             ], StatusCodeInterface::STATUS_UNPROCESSABLE_ENTITY);
         } catch (Throwable $e) {
-            Log::error($e->getMessage(),[
+            Log::error($e->getMessage(), [
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
                 'trace' => $e->getTraceAsString(),
             ]);
+
             return response()->json([
-                'error' => 'Erro interno do servidor'
+                'error' => 'Erro interno do servidor',
             ], StatusCodeInterface::STATUS_INTERNAL_SERVER_ERROR);
         }
     }

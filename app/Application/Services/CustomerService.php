@@ -19,8 +19,8 @@ class CustomerService
         $customer = $this->repository->where([
             [
                 'field' => 'email',
-                'value' => data_get($customerData, 'email')
-            ]
+                'value' => data_get($customerData, 'email'),
+            ],
         ])->first();
 
         if ($customer instanceof Customer) {
@@ -28,6 +28,7 @@ class CustomerService
         }
 
         $customerData['id'] = Uuid::uuid4();
+
         return $this->repository->create($customerData);
     }
 }

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Infrastructure\Http\Requests;
 
+use App\Infrastructure\Exceptions\ValidationApiException;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
-use App\Infrastructure\Exceptions\ValidationApiException;
 
 class BookingMovieRequest extends FormRequest
 {
@@ -26,7 +26,7 @@ class BookingMovieRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'movieId' => 'required|string'
+            'movieId' => 'required|string',
         ];
     }
 
@@ -37,14 +37,13 @@ class BookingMovieRequest extends FormRequest
     {
         return [
             'movieId:required' => 'O campo "movieId" é obrigatório',
-            'movieId:string' => 'O campo "movieId" deve ser um texto'
+            'movieId:string' => 'O campo "movieId" deve ser um texto',
         ];
     }
 
-
     /**
-     * @param Validator $validator
      * @return mixed
+     *
      * @throws ValidationApiException
      */
     protected function failedValidation(Validator $validator)

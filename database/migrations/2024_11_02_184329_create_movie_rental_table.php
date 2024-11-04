@@ -22,7 +22,7 @@ return new class extends Migration
             $table->dateTime('reserve_date')->nullable();
             $table->date('schedule_date')->nullable();
             $table->date('return_date')->nullable();
-            $table->enum('status', ['RESERVED','LEASED','RETURNED'])->nullable();
+            $table->enum('status', ['RESERVED', 'LEASED', 'RETURNED'])->nullable();
             $table->timestamps();
         });
     }

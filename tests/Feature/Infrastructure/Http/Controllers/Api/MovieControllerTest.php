@@ -7,12 +7,13 @@ namespace Tests\Feature;
 use App\Domain\Repository\MovieRepositoryInterface;
 use App\Infrastructure\Repository\MovieRepository;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 use Mockery;
+use Tests\TestCase;
 
 class MovieControllerTest extends TestCase
 {
     use RefreshDatabase;
+
     protected array $movie;
 
     protected function setUp(): void
@@ -34,6 +35,7 @@ class MovieControllerTest extends TestCase
         $repository = Mockery::mock(MovieRepository::class);
         $repository->allows('where')->andReturnSelf();
         $repository->allows('read')->andReturn(collect([$this->movie]));
+
         return $repository;
     }
 
@@ -55,7 +57,7 @@ class MovieControllerTest extends TestCase
                 'rating',
                 'created_at',
                 'updated_at',
-            ]
+            ],
         ]);
     }
 }

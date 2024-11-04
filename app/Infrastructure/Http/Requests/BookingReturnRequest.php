@@ -26,13 +26,13 @@ class BookingReturnRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'scheduleId' => 'required|string'
+            'scheduleId' => 'required|string',
         ];
     }
 
     /**
-     * @param Validator $validator
      * @return mixed
+     *
      * @throws ValidationApiException
      */
     protected function failedValidation(Validator $validator)
