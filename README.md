@@ -21,6 +21,7 @@ filme. É possível realizar a reserva online e retirar o filme na locadora.
 A aplicação foi desenvolvida utilizando as Tecnologias abaixo, segue links para consultas de documentação:
 
 - [Laravel 10.x](https://laravel.com/docs/10.x) - Backend PHP Framework
+- [Vue Js 3.x](https://vuejs.org/guide/introduction) - Frontend framework
 - [Docker](https://docs.docker.com/) - Aplicação Rodando em Container Docker
 
 ## Pré requisitos

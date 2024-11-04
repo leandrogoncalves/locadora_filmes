@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/var/www/html/phpunit.xml" tests="8" assertions="22" errors="0" failures="0" skipped="0" time="1.209103">
-    <testsuite name="default" tests="4" assertions="11" errors="0" failures="0" skipped="0" time="1.161643">
-      <testsuite name="Tests\Feature\MovieControllerTest" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="1.140706">
-        <testcase name="testShouldReturnSuccessOnHealthUrl" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" line="40" class="Tests\Feature\MovieControllerTest" classname="Tests.Feature.MovieControllerTest" assertions="1" time="1.117989"/>
-        <testcase name="testShouldReturnMoviesList" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" line="46" class="Tests\Feature\MovieControllerTest" classname="Tests.Feature.MovieControllerTest" assertions="8" time="0.022717"/>
+  <testsuite name="/var/www/html/phpunit.xml" tests="8" assertions="22" errors="0" failures="0" skipped="0" time="1.160210">
+    <testsuite name="default" tests="4" assertions="11" errors="0" failures="0" skipped="0" time="1.129789">
+      <testsuite name="Tests\Feature\MovieControllerTest" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="1.113792">
+        <testcase name="testShouldReturnSuccessOnHealthUrl" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" line="40" class="Tests\Feature\MovieControllerTest" classname="Tests.Feature.MovieControllerTest" assertions="1" time="1.094030"/>
+        <testcase name="testShouldReturnMoviesList" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" line="46" class="Tests\Feature\MovieControllerTest" classname="Tests.Feature.MovieControllerTest" assertions="8" time="0.019762"/>
       </testsuite>
-      <testsuite name="Unit\Application\Services\MovieServiceTest" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.020937">
-        <testcase name="testShouldGetMoviesSuccesfuly" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" line="44" class="Unit\Application\Services\MovieServiceTest" classname="Unit.Application.Services.MovieServiceTest" assertions="1" time="0.011676"/>
-        <testcase name="testShouldGetOneMovieById" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" line="50" class="Unit\Application\Services\MovieServiceTest" classname="Unit.Application.Services.MovieServiceTest" assertions="1" time="0.009262"/>
-      </testsuite>
-    </testsuite>
-    <testsuite name="Unit" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.019465">
-      <testsuite name="Unit\Application\Services\MovieServiceTest" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.019465">
-        <testcase name="testShouldGetMoviesSuccesfuly" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" line="44" class="Unit\Application\Services\MovieServiceTest" classname="Unit.Application.Services.MovieServiceTest" assertions="1" time="0.008856"/>
-        <testcase name="testShouldGetOneMovieById" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" line="50" class="Unit\Application\Services\MovieServiceTest" classname="Unit.Application.Services.MovieServiceTest" assertions="1" time="0.010609"/>
+      <testsuite name="Unit\Application\Services\MovieServiceTest" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.015997">
+        <testcase name="testShouldGetMoviesSuccesfuly" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" line="44" class="Unit\Application\Services\MovieServiceTest" classname="Unit.Application.Services.MovieServiceTest" assertions="1" time="0.010614"/>
+        <testcase name="testShouldGetOneMovieById" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" line="50" class="Unit\Application\Services\MovieServiceTest" classname="Unit.Application.Services.MovieServiceTest" assertions="1" time="0.005383"/>
       </testsuite>
     </testsuite>
-    <testsuite name="Feature" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="0.027995">
-      <testsuite name="Tests\Feature\MovieControllerTest" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="0.027995">
-        <testcase name="testShouldReturnSuccessOnHealthUrl" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" line="40" class="Tests\Feature\MovieControllerTest" classname="Tests.Feature.MovieControllerTest" assertions="1" time="0.013645"/>
-        <testcase name="testShouldReturnMoviesList" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" line="46" class="Tests\Feature\MovieControllerTest" classname="Tests.Feature.MovieControllerTest" assertions="8" time="0.014350"/>
+    <testsuite name="Unit" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.010027">
+      <testsuite name="Unit\Application\Services\MovieServiceTest" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.010027">
+        <testcase name="testShouldGetMoviesSuccesfuly" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" line="44" class="Unit\Application\Services\MovieServiceTest" classname="Unit.Application.Services.MovieServiceTest" assertions="1" time="0.004988"/>
+        <testcase name="testShouldGetOneMovieById" file="/var/www/html/tests/Unit/Application/Services/MovieServiceTest.php" line="50" class="Unit\Application\Services\MovieServiceTest" classname="Unit.Application.Services.MovieServiceTest" assertions="1" time="0.005039"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="0.020394">
+      <testsuite name="Tests\Feature\MovieControllerTest" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" tests="2" assertions="9" errors="0" failures="0" skipped="0" time="0.020394">
+        <testcase name="testShouldReturnSuccessOnHealthUrl" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" line="40" class="Tests\Feature\MovieControllerTest" classname="Tests.Feature.MovieControllerTest" assertions="1" time="0.009731"/>
+        <testcase name="testShouldReturnMoviesList" file="/var/www/html/tests/Feature/Infrastructure/Http/Controllers/Api/MovieControllerTest.php" line="46" class="Tests\Feature\MovieControllerTest" classname="Tests.Feature.MovieControllerTest" assertions="8" time="0.010663"/>
       </testsuite>
     </testsuite>
   </testsuite>

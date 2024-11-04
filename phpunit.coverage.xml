@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1730673684">
-  <project timestamp="1730673684">
+<coverage generated="1730728866">
+  <project timestamp="1730728866">
     <file name="/var/www/html/app/Application/Services/CustomerService.php">
       <class name="App\Application\Services\CustomerService" namespace="global">
         <metrics complexity="3" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="0" elements="13" coveredelements="0"/>
