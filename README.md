@@ -5,6 +5,8 @@ Este projeto simula um serviço locação de filmes.
 ## Índice
 
 - [Sobre](#sobre)
+- [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Pré requisitos](#pré-requisitos)
 - [Instalação](#instalação)
 - [Como Usar](#como-usar)
 - [Testes](#testes)
@@ -14,6 +16,21 @@ Este projeto simula um serviço locação de filmes.
 
 Neste projeto é possivel fazer a locação de filmes (mídia física), que só possui um exemplar de cada
 filme. É possível realizar a reserva online e retirar o filme na locadora.
+
+## Tecnologias Utilizadas
+A aplicação foi desenvolvida utilizando as Tecnologias abaixo, segue links para consultas de documentação:
+
+- [Laravel 10.x](https://laravel.com/docs/10.x) - Backend PHP Framework
+- [Docker](https://docs.docker.com/) - Aplicação Rodando em Container Docker
+
+## Pré requisitos
+
+Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+
+- Git
+- Docker [docker](https://docs.docker.com/get-docker/)
+- Docker Compose
+
 
 ## Instalação
 
