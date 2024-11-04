@@ -40,12 +40,12 @@ Siga estes passos para instalar o projeto:
 Clone o repositório:
 
 ```bash
-git clone git@github.com:leandrogoncalves/locadora_filmes.git
+   git clone git@github.com:leandrogoncalves/locadora_filmes.git
 ```
 Entre no diretório do projeto
 
 ```bash
-  cd locadora_filmes
+   cd locadora_filmes
 ```
 
 Crie o .env
@@ -89,12 +89,18 @@ Pra executar os testes:
 
 Suba os containers:
 ```bash
-    docker compose up
+   docker compose up
 ```
 
 Rode os testes:
 ```bash
-    docker exec -it app sh -c "php artisan test"
+   docker exec -it app sh -c "php artisan test"
+```
+
+## Validação de Code Style 
+Rode o [Laravel pint](https://laravel.com/docs/10.x/pint) para validação do code style.
+```shell
+   docker compose exec app vendor/bin/pint --test
 ```
 
 ## Funcionamento
